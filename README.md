@@ -1,1 +1,2 @@
-# Barangay-Management-System
+# bis
+Barangay Information System using core PHP
