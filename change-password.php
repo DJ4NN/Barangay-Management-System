@@ -93,7 +93,7 @@ if(isset($_POST['submit'])){
             if($run_update){
                 session_destroy();
                 unset($_SESSION['email']);
-                echo "<script>window.location.href='login.php'</script>";
+                echo "<script>window.location.href='dashboard.php'</script>";
                 exit();
             }
 

@@ -12,7 +12,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | E_DEPRECATED | E_STRICT);
 $conn = new mysqli($host,$username,$password,$database);
 
 if($conn->connect_error){
-	die("Connection Failed: ". $conn->connect_error());
+	die("Connection Failed: ". $conn->error);
 }
 
 if(!isset($_SESSION)){

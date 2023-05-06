@@ -18,10 +18,10 @@ if(empty($email)){
         //otp has done
 
 $timestamp =  $_SERVER["REQUEST_TIME"];  // record the current time stamp
-if(($timestamp - $_SESSION['time']) > 300)  // 5 minutes refers to 300 seconds
+if(($timestamp - $_SESSION['time']) > 30000)  // 5 minutes refers to 300 seconds
 {
 
-    $update_reset = "UPDATE `reset_password` SET `code`= ' ',`date_time_updated`='' WHERE email = '$email' ";
+    $update_reset = "UPDATE `reset_password` SET `code`= ' ' WHERE email = '$email' ";
   $run_update = mysqli_query($conn,$update_reset);
 echo '<script>alert("Your otp has been expired")</script>' ;
 
@@ -95,6 +95,7 @@ if(isset($_POST['submit'])){
             }
             else{
                 echo '<script>alert("Incorrect credentials")</script>' ;
+                die();
             }
 
 
