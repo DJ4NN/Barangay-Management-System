@@ -6,12 +6,13 @@ $conn = new mysqli("localhost", "root" , "", "bms_db");
 if($conn == FALSE){
     echo "error";
 }
-
 session_start();
-$email = $_SESSION['email'];
+$email = $_GET['u'];
+
+// $email = $_SESSION['email'];
 date_default_timezone_set('Asia/Manila');
 
-if(empty($_SESSION['email'])){
+if(empty($_GET['u'])){
     echo "<script>window.location.href='login.php' </script>";
 }
 

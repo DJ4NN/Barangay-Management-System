@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
                 $query_otp = " INSERT INTO reset_password (code, email) VALUES('$hashed_otp', '$email')";
                 $send_query_otp = mysqli_query($conn,$query_otp);
                 if($send_query_otp){
-                    // header("location: otp.php?");
+                    header("location: otp-password.php?u=$email");
                     require ("PHPMailer/src/PHPMailer.php");
                     require("PHPMailer/src/SMTP.php");
                     require("PHPMailer/src/Exception.php");
@@ -52,21 +52,21 @@ if(isset($_POST['submit'])){
                         $timestamp =  $_SERVER["REQUEST_TIME"];  
                         // sendMail($email, $otp);
                         // generate the timestamp when otp is forwarded to user email/mobile.
-                        $_SESSION['time'] = $timestamp;
+                        // $_SESSION['time'] = $timestamp;
                         $_SESSION['email'] = $email;
                         $_SESSION['otp'] = $otp;
-
-                        header("location: otp-password.php");
+                        // echo $_SESSION['email'];
+                        // header("location: otp-password.php");
 
                     } catch (Exception $e) {
                         return false;
                     }
-                    echo "success";
+                    // echo "success";
                 }else{
                     echo "error";
                 }
 
-                return $result;
+                return $validate;
 
             }
         }

@@ -302,14 +302,14 @@
                                             </div>
                                         </div>
                                         <div class="col">
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <label>Identified As</label>
                                                 <select class="form-control indetity" name="indetity">
                                                     <option value="Positive">Positive</option>
                                                     <option value="Negative">Negative</option>
                                                     <option value="Unidentified">Unidentified</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                     
@@ -488,7 +488,7 @@
                                             </div>
                                         </div>
                                         <div class="col">
-                                            <div class="form-group">
+                                            <!-- <div class="form-group">
                                                 <label>Identified As</label>
                                                 <select class="form-control indetity" name="indetity" id="indetity">
                                                     <option disabled selected>Select Identity</option>
@@ -496,7 +496,7 @@
                                                     <option value="Negative">Negative</option>
                                                     <option value="Unidentified">Unidentified</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                     

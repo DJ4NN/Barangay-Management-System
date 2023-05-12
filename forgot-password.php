@@ -4,56 +4,6 @@ $conn = mysqli_connect('localhost', 'root', '') or
 die ('Unable to connect. Check your connection parameters.');
 mysqli_select_db($conn, 'bms_db' ) or die(mysqli_error($conn));
 session_start();
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-    require ("PHPMailer/src/PHPMailer.php");
-    require("PHPMailer/src/SMTP.php");
-    require("PHPMailer/src/Exception.php");
-
-
-
-        function sendMail($email,$otp){
-
-
-            try {
-                $mail = new PHPMailer(true);
-                //Server settings
-                $mail->isSMTP();                                            //Send using SMTP
-                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                $mail->Username   = 'zoeamara03@gmail.com';    //don't forget the email                 //SMTP username // email username
-                $mail->Password   = 'nrapvbuhoctiqump';     // passowrd                          //SMTP // email password password
-                $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
-                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-                //Recipients
-                $mail->SetFrom('zoeamara03@gmail.com');
-                $mail->addAddress($email);
-                      //Add a recipient
-
-                //Content
-                $mail->isHTML(true);                                  //Set email format to HTML
-                $mail->Subject = "OTP";
-                $mail->Body    = "This is your otp ".$otp." Please don't reply" ;
-
-                $mail->send();
-                echo "<script>alert('Success')</script>";
-
-                // return true;
-            }
-            catch (Exception $e) {
-                return false;
-                echo "<script>alert('feld')</script>";
-
-            }
-
-
-
-        }
-
-
 
                 ?>
 
@@ -74,11 +24,12 @@ use PHPMailer\PHPMailer\Exception;
 			<div class="login-form">
                 <form method="POST" action="forgot.php">
 				<div class="form-group form-floating-label">
-					<input name="email" type="email"  class="form-control input-border-bottom" required>
+					<input name="email" type="email" class="form-control input-border-bottom" required>
 					<label for="username" class="placeholder">email</label>
 				</div>
 				<div class="form-action mb-3">
-                    <button type="submit" name="submit" class="btn btn-info btn-rounded btn-login" style="font-size: 16px;">Submit</button>
+                    <input type="submit" value="Submit" name="submit" class="btn btn-info btn-rounded btn-login" style="font-size: 16px;">
+                    <!-- <button type="submit" name="submit" class="btn btn-info btn-rounded btn-login" style="font-size: 16px;">Submit</button> -->
 				</div>
                 </form>
 			</div>

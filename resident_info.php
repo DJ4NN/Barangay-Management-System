@@ -149,10 +149,10 @@
                                         <div class="col-2 col-stats">
                                         </div>
                                         <div class="col-7 col-stats">
-                                            <div class="numbers">
+                                            <!-- <div class="numbers">
                                                 <p class="card-category">Unidentified Voters</p>
                                                 <h4 class="card-title"><?= number_format($unid) ?></h4>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@
                                                     <th scope="col">Gender</th>
                                                     <th scope="col">Purok</th>
                                                     <th scope="col">Voter Status</th>
-                                                    <th scope="col">Identified As</th>
+                                                    <!-- <th scope="col">Identified As</th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -234,7 +234,7 @@
                                                         <td><?= $row['gender'] ?></td>
                                                         <td><?= $row['purok'] ?></td>
                                                         <td><?= $row['voterstatus'] ?></td>
-                                                        <td><?= $row['identified_as'] ?></td>
+                                                        <!-- <td><?= $row['identified_as'] ?></td> -->
                                                     </tr>
                                                     <?php $no++; endforeach ?>
                                                 <?php endif ?>
@@ -248,7 +248,7 @@
                                                     <th scope="col">Gender</th>
                                                     <th scope="col">Purok</th>
                                                     <th scope="col">Voter Status</th>
-                                                    <th scope="col">Identified As</th>
+                                                    <!-- <th scope="col">Identified As</th> -->
                                                 </tr>
                                             </tfoot>
                                         </table>

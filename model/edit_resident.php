@@ -8,7 +8,7 @@
 	}
 	
     $id 	= $conn->real_escape_string($_POST['id']);
-	$national_id 		= $conn->real_escape_string($_POST['national']);
+	// $national_id 		= $conn->real_escape_string($_POST['national']);
 	$fname 		= $conn->real_escape_string($_POST['fname']);
 	$mname 		= $conn->real_escape_string($_POST['mname']);
     $lname 		= $conn->real_escape_string($_POST['lname']);
@@ -35,7 +35,8 @@
   	$target = "../assets/uploads/resident_profile/".basename($newName);
 	$check = "SELECT id FROM tblresident WHERE national_id='$national_id'";
 	$nat = $conn->query($check)->fetch_assoc();	
-	if($national_id['id'] == $id || count($national_id) <= 0){
+	// if($national_id['id'] == $id || count($national_id) <= 0)
+	{
 		if(!empty($id)){
 
 			if(!empty($profile) && !empty($profile2)){
@@ -108,4 +109,3 @@
     header("Location: ../resident.php");
 
 	$conn->close();
-

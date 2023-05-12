@@ -1,32 +1,20 @@
 <?php
-session_start();
 date_default_timezone_set('Asia/Manila');
 $conn = new mysqli("localhost", "root" , "", "bms_db");
+session_start();
 
 
-$email = $_SESSION['email'];
+// $email = $_SESSION['email'];
+
+$email = $_GET['u'];
+
+
+// if(empty($email)){
+//             echo "<script>window.location.href='forgot-password.php' </script>";
+//         }
 
 
 
-
-if(empty($email)){
-            echo "<script>window.location.href='forgot-password.php' </script>";
-        }
-
-
-
-        //otp has done
-
-$timestamp =  $_SERVER["REQUEST_TIME"];  // record the current time stamp
-if(($timestamp - $_SESSION['time']) > 30000)  // 5 minutes refers to 300 seconds
-{
-
-    $update_reset = "UPDATE `reset_password` SET `code`= ' ' WHERE email = '$email' ";
-  $run_update = mysqli_query($conn,$update_reset);
-echo '<script>alert("Your otp has been expired")</script>' ;
-
-    // delete the otp in the database and alert the person that the otp is expired
-}
 
 ?>
 
@@ -46,6 +34,7 @@ echo '<script>alert("Your otp has been expired")</script>' ;
 		<div class="container container-login animated fadeIn">
 
 			<h1 class="text-center">Sign In Here</h1>
+            <!-- <?= $_SESSION['email']?> -->
 			<div class="login-form">
                 <form method="POST" action="">
 				<div class="form-group form-floating-label">
@@ -89,7 +78,7 @@ if(isset($_POST['submit'])){
             if (password_verify($otp, $row['code'])){
                 
                 unset($_SESSION['otp']);
-                header("location: change-password.php");
+                header("location: change-password.php?u=$email");
                  die();
 
             }
